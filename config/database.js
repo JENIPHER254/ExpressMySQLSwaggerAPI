@@ -4,7 +4,7 @@ const {createPool} = require('mysql');
 const pool = createPool({
     port:3306,
     host: 'localhst',
-    user:'root',
+    user:'root', 
     password: '',
     database:'test',
     connectionLimit:10 //how many connections we want to create in a pool
