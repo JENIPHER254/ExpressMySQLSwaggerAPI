@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JENIPHER254/ExpressMySQLSwaggerAPI/issues"
   },
-  "homepage": "https://github.com/JENIPHER254/ExpressMySQLSwaggerAPI#readme"
+  "homepage": "https://github.com/JENIPHER254/ExpressMySQLSwaggerAPI#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
