@@ -2,6 +2,7 @@
 const pool = require('../../config/database');
 
 module.exports =({
+    // SERVICE 1 = create
     //if code is successfull then display the second method if failure then first
     create:(data, callBack)=>{
         pool.query(
@@ -22,4 +23,5 @@ module.exports =({
             }
         )
     }
+    // END SERVICE 1 = create
 })

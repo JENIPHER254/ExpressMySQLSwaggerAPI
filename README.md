@@ -8,3 +8,4 @@ RestApi with Node JS, Express, Swagger and MySQL
 - dotenv package helps keep sensitive information encrypted (npm install  dotenv)
 - nodemon package autoreloads/refresh project onsave (npm install --save-dev nodemon)
 - .gitignore configures the files that will not be uploaded to github
+- dcrupt package helps in encryption and deecryption of data (npm instll dcrypt)
