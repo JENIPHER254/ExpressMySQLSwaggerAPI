@@ -4,7 +4,7 @@ const pool = require('../../config/database');
 module.exports =({
     //if code is successfull then display the second method if failure then first
     create:(data, callBack)=>{
-        pool.query{
+        pool.query(
             `insert into users(firstname, lastname, gender, email, password, number) values(?,?,?,?,?,?)`,
             [
                 data.firstname,
@@ -20,6 +20,6 @@ module.exports =({
                 }
                 return callBack(null, result)
             }
-        }
+        )
     }
 })
