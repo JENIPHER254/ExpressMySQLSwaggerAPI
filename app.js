@@ -1,4 +1,5 @@
 //importing libraries and frameworks
+require("dotenv").config();
 const express = require("express");
 
 //setting up vertual server
@@ -13,6 +14,6 @@ app.get('/api',(req,res)=>{
 })
 
 //listening for server
-app.listen(3000, ()=>{
-    console.log("Server is running ...")
+app.listen(process.env.APP_PORT, ()=>{
+    console.log("Server is running on port", process.env.APP_PORT)
 })
