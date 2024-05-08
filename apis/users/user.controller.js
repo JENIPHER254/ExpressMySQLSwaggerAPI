@@ -66,5 +66,23 @@ module.exports ={
                 data: result
             })
         })
+    },
+
+    //deleteUser controller
+    deleteUser:(req,res)=>{
+        const body = req.body;
+
+        delete(body, (err, result)=>{
+            if(err){
+                console.Console.log(err);
+                return res.status(500).json({
+                    success:0,
+                    message:'Database connection error'       
+                         })
+            }
+            return res.status(200).json({
+                success:1,
+                message:result})
+        })
     }
 }
