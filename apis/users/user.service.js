@@ -38,5 +38,31 @@ module.exports =({
              }
 
         )
+    },
+    // END SERVICE 1 = read
+
+
+    // SERVICE 1 = read
+    //if code is successfull then display the second method if failure then first
+    update:(data,callback)=>{
+       
+        pool.query(
+            `update users set firstname=?, lastname=?, gender=?, email=?, password=?, number=? where id= ?`,
+            [
+                data.firstname,
+                data.lastname,
+                data.gender,
+                data.email,
+                data.password,
+                data.number,
+                data.id
+            ],
+            (error, result, fields)=>{
+                if(error){
+                    return callback(error)
+                }
+                return callback(null,result);
+            }
+        )
     }
 })

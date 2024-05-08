@@ -1,5 +1,5 @@
 //importing required libraries
-const {create, read} = require('./user.service');
+const {create, read, update} = require('./user.service');
 //const { genSaltSync, hashSync}= require('dcrypt');
 
 module.exports ={
@@ -39,12 +39,31 @@ module.exports ={
                 console.log(err);
                 return res.status(500).json({
                     success:0,
-                    message:'Error retrieving data'
+                    message:'Database connection error'
                 })
             }
             return res.status(200).json({
                 success:1,
                 data:result
+            })
+        })
+    },
+
+    //updateUser controller
+    updateUser:(req, res)=>{
+        const body = req.body;
+
+        update(body, (err,result)=>{
+            if(err){
+                console.log(err)
+                return res.status(500).json({
+                    success:0,
+                    message: 'Database connection error'
+                })
+            }
+            return res.status(200).json({
+                success:1,
+                data: result
             })
         })
     }
