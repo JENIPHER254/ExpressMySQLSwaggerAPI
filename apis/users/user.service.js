@@ -22,6 +22,21 @@ module.exports =({
                 return callBack(null, result)
             }
         )
-    }
+    },
     // END SERVICE 1 = create
+
+    // SERVICE 1 = read
+    //if code is successfull then display the second method if failure then first
+    read: (data, callBack)=>{
+        pool.query(
+            `select * from users `,
+             (error,result,fields)=>{
+                if(error){
+                    return callBack(error);
+                }
+                return callBack(null,result)
+             }
+
+        )
+    }
 })

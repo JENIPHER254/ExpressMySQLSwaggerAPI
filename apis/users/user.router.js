@@ -1,8 +1,9 @@
 //import libraries
-const {createUser}= require("./user.controller");
+const {createUser,readUser }= require("./user.controller");
 const router = require('express').Router();
 
 router.post('/',createUser);
+router.get('/',readUser);
 module.exports = router;
 
 

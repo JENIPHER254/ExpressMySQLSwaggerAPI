@@ -4,16 +4,13 @@ const express = require("express");
 
 //setting up vertual server
 const app = express();
+const userRouter= require("./apis/users/user.router");
 
-// callback url / routes
-app.get('/api',(req,res)=>{
-    res.json({
-        success: 1,
-        message: "api is working"
-    })
-})
+//prevent TypeError: Cannot read properties of undefined 
+app.use(express.json());
+app.use("/api/users",userRouter);
 
 //listening for server
 app.listen(process.env.APP_PORT, ()=>{
-    console.log("Server is running on port", process.env.APP_HOST)
+    console.log("Server is running on port", process.env.APP_PORT)
 })
