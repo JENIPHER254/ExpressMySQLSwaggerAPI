@@ -1,5 +1,5 @@
 //importing required libraries
-const {create, read, update} = require('./user.service');
+const {create, read, update, delete_user} = require('./user.service');
 //const { genSaltSync, hashSync}= require('dcrypt');
 
 module.exports ={
@@ -72,7 +72,7 @@ module.exports ={
     deleteUser:(req,res)=>{
         const body = req.body;
 
-        delete(body, (err, result)=>{
+        delete_user(body, (err, result)=>{
             if(err){
                 console.Console.log(err);
                 return res.status(500).json({

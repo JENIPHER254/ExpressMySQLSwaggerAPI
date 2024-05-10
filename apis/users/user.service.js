@@ -68,7 +68,7 @@ module.exports =({
 
    // SERVICE 4 = delete
     //if code is successfull then display the second method if failure then first
-    delete:(data,callBack)=>{
+    delete_user:(data,callBack)=>{
         pool.query(
             `delete * from users where id=?`,
             [

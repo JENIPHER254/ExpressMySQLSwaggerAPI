@@ -1,5 +1,5 @@
 // import service 
-const {create, read} = require('./product.service');
+const {create, read, deleteP} = require('./product.service');
 
 module.exports={
     //createProduct controller section
@@ -39,6 +39,28 @@ module.exports={
                 success:1,
                 data: result
             })
+        })
+
+    },
+    // end readProduct controller
+
+    //deleteProduct controller
+    deleteProduct:(req, res)=>{
+        // get   request body data
+        const body = req.body;
+
+        delete_product(body, (err,result)=>{
+            if(err){
+                console.log(err);
+                return res.status(500).json({
+                    success:0,
+                    message: 'Database connection error'
+                })
+                
+            }return res.status(200).json({
+                    success:1,
+                    data: result
+                })
         })
 
     }

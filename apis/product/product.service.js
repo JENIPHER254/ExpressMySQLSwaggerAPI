@@ -26,7 +26,7 @@ module.exports =({
     // End SERVICE 1
 
     //SERVICE 2 = read 
-    // id code is successful the user should be able to read data in json format
+    // if code is successful the user should be able to read data in json format
     read:(data, callback)=>{
         //read query : pool= db credentials
         pool.query(
@@ -40,5 +40,26 @@ module.exports =({
             }
 
         )
+    },
+    // end SERVICE 2
+
+    //START SERVICE 3 = delete
+    // if code is successful user should be able to delete product according to productID
+    delete_product:(data, callBack)=>{
+
+        pool.query(
+            `delete from product where productID=?`,
+            [
+                data.productID
+            ],
+            (error, results, fields)=>{
+                if(error){
+                    console.log(error);
+                    return callBack(error);
+                }
+                return callBack(null,results);
+            }
+        )
     }
+
 })
