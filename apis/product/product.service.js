@@ -1,6 +1,7 @@
 // importing db credentials
 const pool = require('../../config/database');
 
+
 module.exports =({
     //SERVICE 1 = create
     //if code is successful a product will be added to db
@@ -60,6 +61,33 @@ module.exports =({
                 return callBack(null,results);
             }
         )
+    },
+    //end SERVICE3 
+    //end delete service
+
+
+    //SERVICE 4
+    //if code works user should be able to update respective product
+    update: (data, callBack)=>{
+        pool.query(
+            `update product set productName=?, productDescription=?, price=?, quantity=? ,productID=? where id=? `,
+        [
+            data.productName,
+            data.productDescription,
+            data.price,
+            data.quantity,
+            data.productID,
+            data.id
+        ],(error, result, fields)=>{
+            if(error){
+                console.log(error);
+                return callBack(error);
+            }
+            return callBack(null, result);
+        }
+        )
+        
+
     }
 
 })

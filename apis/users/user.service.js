@@ -43,7 +43,7 @@ module.exports =({
 
 
     // SERVICE 1 = read
-    //if code is successfull then display the second method if failure then first
+    //if code is successful then display the second method if failure then first
     update:(data,callback)=>{
        
         pool.query(
