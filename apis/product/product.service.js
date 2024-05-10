@@ -20,7 +20,7 @@ module.exports =({
                 if(error){
                     return callBack(error);
                 }
-                return callBack(results);
+                return callBack(null,results);
             }
         )
     },
