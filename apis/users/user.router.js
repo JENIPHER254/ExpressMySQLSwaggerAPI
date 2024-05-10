@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 router.post('/',createUser);
 router.get('/',readUser);
-router.patch('/',updateUser);
+router.put('/',updateUser);
 router.delete('/',deleteUser);
 module.exports = router;
 
